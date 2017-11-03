@@ -1,0 +1,44 @@
+{
+  "网络": {
+    {
+      "tcp": 
+      {
+        {"read": "/proc/sys/net/ipv4/tcp_rmem：net.ipv4.tcp_rmem，接收缓存设置，依次代表最小值、默认值和最大值(bit)"},
+        {"write": "/proc/sys/net/ipv4/tcp_wmem：net.ipv4.tcp_wmem，发送缓存设置，依次代表最小值、默认值和最大值(bit)"},
+        {"setsockopt设置不要超过上面值的2倍"}        
+      },
+      “udp”: {
+        {"read"： “/proc/sys/net/core/rmem_max 接收缓冲区”},
+        {"write": "/proc/sys/net/core/wmem_max 写缓冲区"}
+      },
+      "冗余连接处理": {
+        {"time_wait": "echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse 重复利用。echo 1 > /proc/sys/net/ipv4/tcp_tw_recycle尽快回收"｝,
+        {"close_wait": "注意recv==0的情况"}，
+        {"业务层保留连接以及解决各种设计缺陷导致的冗余连接": "心跳维护"}
+      }
+    }
+    “udp缓冲区大小设置”:“/proc/sys/net/core/rmem_max”
+  },
+  "c++高性能": {
+    [
+      {
+        "初级阶段应该考虑到整体的架构设计，尽量采用设计模式把影响性能的部分剥离处理。方便后期优化。性能方面不要首先就控制到完美，往往会毁了架构"
+      }
+      {
+        "内联"
+      },
+      {
+        "cpu cache命中" : "L1 cache一般存储512B,在使用的时候注意for循环的性能"。
+      },
+      {
+        "c++临时变量的使用": 
+          "备忘录：1.不要出现 CD d; DDD(d);类似的代码，会导致c++编译环节出现临时变量。class构造一般声明explicit做到所有的生成变量是能控制的。再引申
+          class的变量管理，一般使用prototype设计模式"        
+      }，
+      {
+        "1.cache设计的时候，要重点考虑到find的性能.
+         2.cache尽量做到批量处理。比如char可以转换为int,uint64_t批次处理。运算多移位等。"
+      }
+    ]
+  }
+}
