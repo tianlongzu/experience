@@ -1,0 +1,18 @@
+//论文提供的代码
+int32_t jump_consistent_hash(uint64_t& key, int32_t num_buckets)
+{
+	int64_t b = -1, j = 0;
+	while (j < num_buckets) {
+		b = j;
+		key = key * 2862933555777941757ULL + 1;
+		j = (b + 1) * (double(1LL << 31) / double((key >> 33) + 1));
+	}
+	return b;
+}
+//设置最大10个节点
+int arg; //用户输入,取id做哈希
+int ret;
+	do
+	{
+		ret = jump_consistent_hash(arg, 10); 
+	} while (ret == 1 || ret == 3 ); //设置1，3节点坏死。
