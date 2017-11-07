@@ -1,3 +1,4 @@
+//http://my.oschina.net/u/658658/blog/424161
 //论文提供的代码
 int32_t jump_consistent_hash(uint64_t& key, int32_t num_buckets)
 {
