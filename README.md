@@ -9,4 +9,5 @@ func main() {
 	i : 0; i++ {
 		println("l:", l)
 	}
+    time.Sleep(1000)    
 }
