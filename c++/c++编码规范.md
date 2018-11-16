@@ -2,10 +2,9 @@
 
 ## 编码规则
 
-1. C++代码风格应遵循Google规范。
+1. C++代码风格应遵循Google规范
 
-细节参照地址:
-[https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/)
+- 细节参照地址[https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/)
 
 2. 函数以及变量命名遵循下划线`_`风格。例如`int my_foo = 1;`
 
