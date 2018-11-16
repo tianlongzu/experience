@@ -16,11 +16,13 @@
 
 - 打开工程后，对应工程目录下创建`.vscode/settings.json`文件。
 
-- 在文件中添加如下内容:
+- 在`JSON`文件中的`{}`之内添加如下内容:
 
-```
-"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2 }",
-"editor.formatOnSave": true
+```json
+{
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2 }",
+    "editor.formatOnSave": true
+}
 ```
 
 - 语意是每次保存文件时会自动按照规则格式化代码。
