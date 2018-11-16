@@ -10,7 +10,7 @@ https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/
 2.使用vscode
 
 3.打开工程后，对应工程目录下点击.vscode.打开会有settings.json文件。在文件中黏贴如下内容:
-"C_Cpp.clang_format_fallbackStyle": "Google",
+"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2 }",
 "editor.formatOnSave": true,
 语意是每次保存文件时会自动按照规则格式化代码。
 
